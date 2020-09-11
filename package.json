@@ -1,0 +1,16 @@
+{
+  "name": "poc-to-platform-team",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Presentation about building a platform team.",
+  "scripts": {
+    "start": "mdx-deck index.mdx",
+    "build": "mdx-deck build index.mdx"
+  },
+  "keywords": [],
+  "author": "Nick Hehr",
+  "license": "CC-By-4.0",
+  "devDependencies": {
+    "mdx-deck": "^4.1.1"
+  }
+}

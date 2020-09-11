@@ -1,0 +1,358 @@
+import { themes, Notes, Split, Steps, Image, Horizontal } from 'mdx-deck'
+
+export const theme = themes.book;
+
+# Proof of Concept to Platform Team
+
+<div style={{ maxWidth: '70rem' }}>
+
+How Betterment went from experimenting with React to supporting a Front End Platform Team to encompass React, a11y, and our design system.
+
+</div>
+
+---
+
+## About Me
+
+<Horizontal style={{ height: '80%' }}>
+
+<div style={{ textAlign: 'left' }} >
+
+<Steps>
+
+- Nick Hehr
+- HipsterBrown on Twitter/GitHub/etc
+- Front End Platform Team engineer
+- Mustache is a figment of your imagination
+
+</Steps>
+
+</div>
+
+<img src="https://avatars1.githubusercontent.com/u/3051193?s=460&u=0d9c7a5f98cb9e425505a25da6f6c0b0d278ded9&v=4" alt="HipsterBrown avatar" style={{ height: '50vh' }} />
+
+</Horizontal>
+
+---
+
+import FirstPoC from './images/2017-first-poc.png';
+
+# Timeline
+
+<Split>
+
+<div style={{ textAlign: 'left' }} >
+
+## 2017
+
+<Steps>
+
+First experiment with React
+
+</Steps>
+
+</div>
+
+<img src={FirstPoC} />
+
+</Split>
+
+<Notes>
+
+This was a standalone prototype, with no scope for how it would integrate with Rails. Prior to this, JavaScript was added to server-rendered views as "sprinkles of behavior", following the "unobtrusive scripting" pattern documented by Rails.
+
+
+These explorations were collected under a "javascript_3point0" banner as the next generation of front end development at Betterment.
+
+</Notes>
+
+---
+
+<div style={{ textAlign: 'left' }} >
+
+# Timeline
+
+## 2018
+
+<Steps>
+
+- Webpacker and Stimulus introduced to the design system's docs site
+- React introduced to core web app
+- Stimulus controllers and React islands were moved to a top-level workspace within the monorepo
+
+</Steps>
+
+</div>
+
+<Notes>
+
+- prove out using this new Rail's approved build system and JS behavior library
+- A few weeks later, it was introduced to our main Rails app monorepo.
+- Stimulus + StyleCloset::Component became the go-to way for building interactive, shareable components in our Rails apps
+- [next item] workspace was embedded in the Rails app directory, bundled with Webpacker, and loaded through a data attribute in the markup of a Rails view
+- "Archipelago", as it composed one or more React "islands" around the Rails app (heavily inspired by the work of `ember-islands`)
+- scaffolded using a version of create-react-app (CRA) to support using TypeScript
+- [next item] using yarn workspaces to connect those private packages with the Rails webpacker pipeline. This allowed for linting, testing, prototyping without interacting with the Rails codebase
+
+</Notes>
+
+---
+
+import Archipelago from './images/2018-Archipelago.png'
+
+<Image src={Archipelago} style={{ backgroundPosition: 'top', height: '90%' }} />
+
+<div style={{ textAlign: 'center' }}>
+
+"Archipelago" demo
+
+</div>
+
+---
+
+
+<div style={{ textAlign: 'left' }} >
+
+# Timeline
+
+## 2019
+
+<Steps>
+
+- React is chosen as the front end technology to build out the new Checking app within the Rails web experience
+- Experiences from the Checking web app demoed, React interest grew within other product teams
+- Engaged with ReactTraining.com for in-person two day training hosted at Betterment, attendees were selected across the org as ambassadors for their product team
+
+</Steps>
+
+</div>
+
+<Notes>
+
+- motivated by the BFF (Backend for Frontend) architecture design required by integrating with our Banking partner's API
+- hired to help boost the productivity of the team and rapidly iterate on the unsolved front end platform problems that would come up during the initial prototyping of the app
+- [next item] leading to a need for some official training to promote the continued investment in React across the org
+- Ambassadors were tasked to bring this new knowledge back to their teams and get them up to speed as React work spread
+
+</Notes>
+
+---
+
+<div style={{ textAlign: 'left' }} >
+
+# Timeline
+
+## 2019
+
+<Steps>
+
+- Rapid iteration within the Checking web app started to solidify into useful patterns for data fetching, wizard / flows, form management
+- Internal `js-runtime` library is created to store these helpers
+- "React Eng Forum" twice-monthly meetings is organized to discuss new ideas and patterns for the platform
+
+</Steps>
+
+</div>
+
+<Notes>
+
+- they were mostly stored in the retail workspace and Checking domain, leading to drift through copy-pasta implementations
+- style-closet design system to share the UI components
+
+</Notes>
+
+---
+
+import JSRuntimeDocs from './images/2019-js-runtime-docs.png'
+
+<Image src={JSRuntimeDocs} style={{ backgroundPosition: 'top', backgroundSize: 'contain', height: '90%' }} />
+
+<div style={{ textAlign: 'center' }}>
+
+js-runtime doc site
+
+</div>
+
+---
+
+<div style={{ textAlign: 'left' }} >
+
+# Timeline
+
+## 2019
+
+<Steps>
+
+- JS Platform Initiatives doc presented at an internal engineering showcase called BetterDev
+
+</Steps>
+
+</div>
+
+<Notes>
+
+- taking a step back from the day-to-day development work and audit the pain points for front end development
+- document identified three major areas of work with defined goals for success and direction
+- outlines the goals as organizational intitiatives for any engineers to feel empowered to work on
+
+</Notes>
+
+---
+
+<div style={{ textAlign: 'left' }} >
+
+# Timeline
+
+## 2020
+
+<Steps>
+
+- A new, large React project was in planning
+- First draft of Front End Platform Team Proposal was opened to outside reviewers
+- Idea of embedding with a different product team was tested
+- The Front End Platform Team is approved
+
+</Steps>
+
+</div>
+
+<Notes>
+
+- led to me being tasked to direct that work, separate from day-to-day Checking responsibilities
+- consulting with that product team's upcoming project (Omni-Transfer) and seeing how much assistance they would need to get up and running
+- leading to a Mobile Platform Team discussion in the same vein
+- Front End team started with a single member with plans to add more as hiring is ramped up
+
+</Notes>
+
+
+---
+
+# The Proposal
+
+<div style={{ maxWidth: '70rem' }}>
+
+> "Resource and sponsor a Front End Platform Team to manage the growing React, TypeScript, and Style-Closet usage across the org"
+
+</div>
+
+<Notes>
+
+while the first two platform teams were formed organically for the most part, getting the front end platform team started would require gather buy-in and sponsorship from engineering leadership.
+
+</Notes>
+
+---
+
+## Dream team
+
+<Steps>
+
+- Product Eng Leads (1 per Product / 3 total)
+- Design System Eng Lead
+- Platform Tooling & Training Lead
+
+</Steps>
+
+<Notes>
+
+The original idea started as a sketch of a "dream team" of roles to cover front end responsibilities at Betterment.
+
+Getting 5 engineers allocated to platform work would be a major roadblock for starting an unproven team. So those roles were massaged into "Core Responsibilities" to be covered by the team, no matter the number of engineers.
+
+</Notes>
+
+
+---
+
+## A lot with a little
+
+<div style={{ maxWidth: '70rem' }}>
+
+> "It is key to note that this group should not be seen as gatekeepers for any React, TypeScript, or Style-Closet work, rather as guides with a cross-cutting view of the Front End ecosystem at Betterment that encourage solutions from any engineer in the org."
+
+</div>
+
+<Notes>
+
+Scaling platform work across an org of 80 to 100 engineers cannot be done by one or two individuals.
+
+Platform engineers need to partner with product team engineers, designers, and managers to make progress on any initiatives that affect those groups.
+
+</Notes>
+
+
+---
+
+## Hiring within
+
+<div style={{ maxWidth: '70rem' }}>
+
+> "Through existing groups like the js-platform reviewers and React engineering forum, we can identify capable and motivated candidates to apply for this team."
+
+</div>
+
+<Notes>
+
+Setting up the growth strategy for this team is key to previewing the potential impact for the development of engineers
+
+Many engineers at Betterment know 2 paths for growth, management or IC, where IC can now split into two directions: Product & Platform
+
+The advantages of staffing such a team from within Betterment are stronger guarantees that those engineers understand the platform and domains they're tasked with helping improve and maintain
+
+</Notes>
+
+---
+
+## What the future holds
+
+<div style={{ maxWidth: '70rem' }}>
+
+> "Engineers have access to an array of materials and workshops for learning about front end technologies, allowing product teams to efficiently build new UIs and front end features with the support of Product Eng Leads and helpful documentation. Style-Closet Eng & Design Leads maintain a public roadmap for the project, resourced by the Core Working Group. Betterment Engineering has a positive presence in the front end and design communities through meetups, open source projects, and blog posts."
+
+</div>
+
+<Notes>
+
+What does success look like for the team and how does that positively affect the rest of the org compared to the state of the world now?
+
+</Notes>
+
+---
+
+# The Roadmap
+
+<Notes>
+
+The Roadmap should be treated as a living document, as the needs of the org change based on product changes, etc.
+
+Some goals have an end state, while others may be a continual process that have target key metrics and plans for keeping at that threshold.
+
+</Notes>
+
+
+---
+
+## Long-term initiatives
+
+<Steps>
+
+- Consolidate Front End Platform Tooling
+- Testing Excellence
+- Accessibility Excellence
+- Performance Monitoring
+
+</Steps>
+
+<Notes>
+
+- The overall goal of this initiative is for any web engineer to jump into a JavaScript feature with consistent tooling, feedback, and guarantees that they will not be breaking functionality while they work
+- The overall goal of this initiative is to recognize the holes in the front end testing experience
+- The overall goal of this initiative is to recognize gaps in knowledge about discovering issues, developing, and maintaining our apps with a11y in mind
+- Working with stakeholders to set up monitoring to continually observe JavaScript bundle size and establishing best practices for serving most performant code paths
+
+</Notes>
+
+---
+
+# Thank you
